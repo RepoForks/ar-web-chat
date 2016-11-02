@@ -180,6 +180,10 @@ FriendlyChat.prototype.onAuthStateChanged = function(user) {
 FriendlyChat.prototype.checkSignedInWithMessage = function() {
   /* TODO(DEVELOPER): Check if user is signed-in Firebase. */
 
+  if (this.auth.currentUser) {
+    return true;
+  }
+  
   // Display a message to the user using a Toast.
   var data = {
     message: 'You must sign-in first',
